@@ -1,8 +1,31 @@
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+#Calculate the factorial of a given number
+
+def factorial(number):
+    if number==0 or number==1:
+        return 1
+    else:
+        return number * factorial(number-1)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def factorialTrailingZeroes(number):
+    count = 0
+    i=5
+    #100! = 100//5 + 100//5*5
+    while(number//i!=0):
+        count+=int(number/i)
+        i = i*5
+    return count
+    # fac = factorial(number)
+    # print(fac)
+    # count = 0
+    # while(fac%10 ==0):
+    #     count = count + 1
+    #     fac = fac/10
+    # return count
+
+if __name__=='__main__':
+    number = int(input("Enter a number"))
+    # fac = factorial(number)
+    # print(f"The factorial is {fac}")
+    print(factorialTrailingZeroes(number))
+
